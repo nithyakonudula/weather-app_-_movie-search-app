@@ -1,0 +1,299 @@
+/* ------------------------------
+   Reset
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ------------------------------
+   Body
+------------------------------ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+
+    padding: 40px 20px;
+
+    color: white;
+}
+
+
+/* ------------------------------
+   Main App
+------------------------------ */
+
+.movie-app {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* ------------------------------
+   Header
+------------------------------ */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+
+    color: #d0d0d0;
+}
+
+
+/* ------------------------------
+   Search Section
+------------------------------ */
+
+.search-section {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 30px;
+}
+
+#movie-form {
+    display: flex;
+
+    width: 100%;
+    max-width: 650px;
+
+    gap: 10px;
+}
+
+#movie-input {
+    flex: 1;
+
+    padding: 15px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#movie-form button {
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#movie-form button:hover {
+    transform: translateY(-2px);
+
+    background: #ff1a25;
+}
+
+
+/* ------------------------------
+   Error Message
+------------------------------ */
+
+#error-message {
+    text-align: center;
+
+    margin: 20px 0;
+
+    min-height: 24px;
+
+    color: #ff6b6b;
+
+    font-size: 17px;
+}
+
+
+/* ------------------------------
+   Movie Container
+------------------------------ */
+
+#movie-container {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+
+    gap: 25px;
+
+    margin-top: 25px;
+}
+
+
+/* ------------------------------
+   Movie Card
+------------------------------ */
+
+.movie-card {
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ------------------------------
+   Movie Poster
+------------------------------ */
+
+.movie-poster {
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ------------------------------
+   Movie Information
+------------------------------ */
+
+.movie-info {
+    padding: 20px;
+}
+
+.movie-info h2 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    color: #d5d5d5;
+
+    line-height: 1.5;
+
+    margin-bottom: 8px;
+}
+
+
+/* ------------------------------
+   Rating
+------------------------------ */
+
+.rating {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-weight: bold;
+}
+
+
+/* ------------------------------
+   Responsive Design
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    #movie-form {
+        flex-direction: column;
+    }
+
+    #movie-form button {
+        width: 100%;
+    }
+
+    #movie-input {
+        width: 100%;
+    }
+
+    #movie-container {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        );
+    }
+
+    .movie-poster {
+        height: 300px;
+    }
+}
+
+
+/* ------------------------------
+   Small Screens
+------------------------------ */
+
+@media (max-width: 400px) {
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    #movie-container {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-poster {
+        height: 400px;
+    }
+}
